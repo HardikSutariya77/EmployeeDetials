@@ -9,6 +9,6 @@ public class EmployeeDataAlreadyExistsException extends RuntimeException{
     public EmployeeDataAlreadyExistsException(){}
     public EmployeeDataAlreadyExistsException(String message){
         super(message);
-        this.message=message;
+       this.message=message;
     }
 }

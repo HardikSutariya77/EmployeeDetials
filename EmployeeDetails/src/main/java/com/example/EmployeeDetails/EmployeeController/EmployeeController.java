@@ -64,13 +64,13 @@ public class EmployeeController {
         return new ResponseEntity(response,HttpStatus.ACCEPTED);
     }
 
-
+        /*Exception Handling for invalid employee data input*/
         @ExceptionHandler(value = EmployeeDataAlreadyExistsException.class)
         @ResponseStatus(HttpStatus.CONFLICT)
         public ErrorResponse handleEmployeeDataAlreadyExistsException(EmployeeDataAlreadyExistsException e){
             return new ErrorResponse(HttpStatus.CONFLICT.value(),e.getMessage());
         }
-
+        /*Exception Handling for invalid employee data search,update and delete */
         @ExceptionHandler(value = EmployeeDataNotExistException.class)
         @ResponseStatus(HttpStatus.NOT_FOUND)
         public ErrorResponse handleEmployeeDataNotExistException(EmployeeDataNotExistException e){
